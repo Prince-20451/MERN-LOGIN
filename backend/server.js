@@ -35,16 +35,15 @@ app.get('/contact', (req, res)=>{
 });
 
 app.get("/search", (req, res) => {
-    console.log(req.query);
-    res.send(`hello ${req.query.age}`)
+    // console.log(req.query);
+    res.send(req.query)
 });
-
-app.listen(PORT, ()=>{
-    console.log("server is running...");
-});
-
 
 app.post("/login", (req, res)=>{
     console.log(req.body);
     res.send("login API")
+});
+
+app.listen(PORT, ()=>{
+    console.log("server is running...");
 });
