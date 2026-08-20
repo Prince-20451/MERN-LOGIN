@@ -18,7 +18,13 @@ app.use(express.json(), (req, res, next) => {
 });
 
 app.get('/',(req, res)=>{
-    res.send("This is my Home Page");
+    console.log("A");
+
+    console.log("B");
+
+    res.send("Hello");
+
+    console.log("C");;
 });
 
 
@@ -36,12 +42,19 @@ app.get('/contact', (req, res)=>{
 
 app.get("/search", (req, res) => {
     // console.log(req.query);
-    res.send(req.query)
+    res.send(req.query);
 });
 
 app.post("/login", (req, res)=>{
     console.log(req.body);
     res.send("login API")
+});
+
+app.get("/product", (req, res)=>{
+    res.send(`
+        Product: ${req.query.name}
+        Age: ${req.query.age}
+        `);
 });
 
 app.listen(PORT, ()=>{
